@@ -1,0 +1,232 @@
+/3.2
+(ODB.1
+	FirstRootClassName:	"Project"
+	Roots:	2
+	Version:	32
+)
+
+(Project.2
+	Name:	"myfavoriteavenuesnippet.apr"
+	CreationDate:	"Saturday, February 15, 2014 5:47:55 PM"
+	GUIName:	"Project"
+	Win:	3
+	CSMgr:	4
+	DocExts:	5
+	VisGUIWidth:	70
+	Doc:	6
+	Doc:	10
+	Doc:	14
+	Doc:	18
+	Buttons:	22
+	Buttons:	23
+	Buttons:	24
+	Scripts:	25
+	Prefs:	26
+	WorkDir:	854
+	WinX:	42
+	WinY:	26
+	WinW:	526
+	WinH:	462
+	SerialNumber:	"899491100078"
+	GUINames:	855
+	GUINames:	856
+	GUINames:	857
+	GUINames:	858
+	GUINames:	859
+	GUINames:	860
+	GUINames:	861
+	TocWidthScale:	1.00000000000000
+)
+
+(DocWin.3
+	Owner:	2
+	Open:	1
+	X:	5
+	Y:	5
+	W:	238
+	H:	324
+)
+
+(CSMgr.4
+)
+
+(DocAct.5
+	Doc:	2
+)
+
+(SEd.6
+	Name:	"_ReadMe"
+	CreationDate:	"Saturday, February 15, 2014 6:04:46 PM"
+	GUIName:	"Script"
+	Win:	7
+	CSMgr:	8
+	DocExts:	9
+	Source:	"' These three scripts are some of my favorite Avenue code of all time.\n'\n' Because you can only step through one script, I often was faced with\n' the challenge of debugging a script that was called by another script \n' without always knowing what parameters were passed in.\n'\n' These scripts get around that. I use a global dictionary variable, \n' _MyApplication_SelfDict, to store script names and the variable(s) passed\n' into that script.\n'\n' At the beginning of a script, (e.g. MyApplication_ClientScript), I
+ call a\n' routine, MyApplication_Routine_AddSelfDict, that adds the first script and\n' its parameters to the global dictionary. The next step is to retrieve the\n' same paramters from the global dictionary by calling MyApplication_Routine_GetSelfDict.\n\n' When I debugging a script, I will temporarily put an \"exit\" statement in the\n' script so that it quits instead of doing anyting and run whatever process launches\n' the problematic script. Once it quits out, I remove the \"exit\" command, and can step\n'through 
+the script. The nil condition at the beginning prevents the original parameters\n' from getting overwritten in the global dictionary.\n' \n' For more information, please see: http://www.maprantala.com/2010/05/"
+	FontSize:	1
+)
+
+(DocWin.7
+	Owner:	6
+	X:	198
+	Y:	14
+	W:	784
+	H:	252
+)
+
+(CSMgr.8
+)
+
+(DocAct.9
+	Doc:	6
+)
+
+(SEd.10
+	Name:	"MyApplication_ClientScript"
+	CreationDate:	"Saturday, February 15, 2014 5:55:30 PM"
+	GUIName:	"Script"
+	Win:	11
+	CSMgr:	12
+	DocExts:	13
+	Source:	"' Map@MapRantala.com\n'\n' http://www.maprantala.com/2010/05/\n'\n\nIf (self<>nil) then\n  av.run(\"MyApplication_Routine_AddSelfDict\",{\"MyApplication_ClientScript\",self})\nEnd\n\ntheSelf = av.run(\"MyApplication_Routine_GetSelfDict\",\"MyApplication_ClientScript\")\n\n'**** The following EXIT is added for debugging purposes.  This gets \n'temporarily added so I can capture ‘the application  state.  After \n'running the process and getting to this point, I remove the exit and \n'can step ‘through this script.  The snippet abo
+ve retrieves the \n'parameters as passed into this script.\n\nEXIT"
+	FontSize:	1
+)
+
+(DocWin.11
+	Owner:	10
+	X:	113
+	Y:	101
+	W:	524
+	H:	252
+)
+
+(CSMgr.12
+)
+
+(DocAct.13
+	Doc:	10
+)
+
+(SEd.14
+	Name:	"MyApplication_Routine_AddSelfDict"
+	CreationDate:	"Saturday, February 15, 2014 5:48:12 PM"
+	GUIName:	"Script"
+	Win:	15
+	CSMgr:	16
+	DocExts:	17
+	Source:	"' Map@MapRantala.com\n'\n' http://www.maprantala.com/2010/05/\n'\n\ntheScript = self.get(0)\ntheSelf = self.get(1)\n\nif (_MyApplication_SelfDict.is(Dictionary).not) then\n  _MyApplication_SelfDict = dictionary.make(25)\nend\n\nif (self <> nil) then\n  _MyApplication_SelfDict.add(theScript,theSelf)\n  _MyApplication_SelfDict.set(theScript,theSelf)\nend"
+	FontSize:	1
+)
+
+(DocWin.15
+	Owner:	14
+	X:	29
+	Y:	128
+	W:	363
+	H:	252
+)
+
+(CSMgr.16
+)
+
+(DocAct.17
+	Doc:	14
+)
+
+(SEd.18
+	Name:	"MyApplication_Routine_GetSelfDict"
+	CreationDate:	"Saturday, February 15, 2014 5:54:17 PM"
+	GUIName:	"Script"
+	Win:	19
+	CSMgr:	20
+	DocExts:	21
+	Source:	"' Map@MapRantala.com\n'\n' http://www.maprantala.com/2010/05/\n'\n\nif (_MyApplication_SelfDict.is(Dictionary).not) then\n   _MyApplication_SelfDict = dictionary.make(25)\nend\n\nreturn (_MyApplication_SelfDict.get(self))\n\n"
+	FontSize:	1
+)
+
+(DocWin.19
+	Owner:	18
+	X:	62
+	Y:	-2
+	W:	363
+	H:	252
+)
+
+(CSMgr.20
+)
+
+(DocAct.21
+	Doc:	18
+)
+
+(LButn.22
+	HelpTopic:	"New_button"
+	Update:	"Doc.NewUpdate"
+	Label:	"&New"
+	Click:	"Script.New"
+)
+
+(LButn.23
+	HelpTopic:	"Open_button"
+	Update:	"Doc.OpenUpdate"
+	Label:	"&Open"
+	Click:	"Doc.Open"
+)
+
+(LButn.24
+	HelpTopic:	"Run_button"
+	Update:	"Script.ActionUpdate"
+	Label:	"&Run"
+	Click:	"Script.Action"
+)
+
+(NameDict.25
+)
+
+(NameDict.26
+	Obj:	27
+	Obj:	28
+)
+
+(AVDict.27
+	InternalName:	"Table of Contents Defaults Dialog"
+)
+
+(AVDict.28
+	InternalName:	"_Thor_"
+)
+
+(FN.854
+	Path:	"$HOME"
+)
+
+(AVStr.855
+	S:	"View"
+)
+
+(AVStr.856
+	S:	"Table"
+)
+
+(AVStr.857
+	S:	"Chart"
+)
+
+(AVStr.858
+	S:	"Layout"
+)
+
+(AVStr.859
+	S:	"Script"
+)
+
+(AVStr.860
+	S:	"Project"
+)
+
+(AVStr.861
+	S:	"Appl"
+)
+

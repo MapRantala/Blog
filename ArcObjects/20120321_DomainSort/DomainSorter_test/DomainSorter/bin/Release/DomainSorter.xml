@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DomainSorter
+</name>
+</assembly>
+<members>
+<member name="P:DomainSorter.My.ThisAddIn.IDs.btnDomainSorter">
+	<summary>
+Returns 'ESRI_DomainSorter_btnDomainSorter', the id declared for Add-in Button class 'btnDomainSorter'
+</summary>
+</member><member name="T:DomainSorter.My.ThisAddIn.IDs">
+	<summary>
+A class for looking up Add-in id strings declared in the associated configuration xml file (.esriaddinx).
+</summary>
+</member><member name="T:DomainSorter.My.ThisAddIn">
+	<summary>
+A class for looking up declarative information in the associated configuration xml file (.esriaddinx).
+</summary>
+</member><member name="M:DomainSorter.My.Internal.AddInStartupObject.GetThis">
+	<summary>
+ Expose this instance of Add-in class externally
+ </summary>
+</member>
+</members>
+</doc>

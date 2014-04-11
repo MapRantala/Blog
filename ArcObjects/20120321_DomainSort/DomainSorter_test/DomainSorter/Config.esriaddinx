@@ -1,0 +1,34 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>DomainSorter</Name>
+  <AddInID>{97e04839-2879-48f2-a9a9-5db2cd23f3b2}</AddInID>
+  <Description>This is an upgrade of ESRI's Domain Sort from VB6 to ArcObjects.Net (10.0).  
+
+Upgrade done by Matthew Rantala
+http://nodedangles.wordpress.com/
+
+Original Code downloaded from:
+http://resources.esri.com/help/9.3/ArcGISDesktop/com/samples/geodatabase/Schema_Creation_and_Management/sort_a_domain/e826c5a8-9740-4f0b-86b6-d3b834735574.htm&amp;lt;/Description&amp;gt;
+</Description>
+  <Version>1.1</Version>
+  <Image>Images\DomainSorter.png</Image>
+  <Author>ESRI (Upgrade by Rantala)</Author>
+  <Company>ESRI</Company>
+  <Date>3/21/2012</Date>
+  <Targets>
+    <Target name="Desktop" version="10.0" />
+  </Targets>
+  <AddIn language="CLR" library="DomainSorter.dll" namespace="DomainSorter">
+    <ArcCatalog>
+      <Commands>
+        <Button id="ESRI_DomainSorter_btnDomainSorter" class="btnDomainSorter" message="This is an upgrade of ESRI's Domain Sort from VB6 to ArcObjects.Net (10.0).  &#xD;&#xA;&#xD;&#xA;Upgrade done by Matthew Rantala&#xD;&#xA;http://nodedangles.wordpress.com/&#xD;&#xA;&#xD;&#xA;Original Code downloaded from:&#xD;&#xA;http://resources.esri.com/help/9.3/ArcGISDesktop/com/samples/geodatabase/Schema_Creation_and_Management/sort_a_domain/e826c5a8-9740-4f0b-86b6-d3b834735574.htm&amp;lt;/Description&amp;gt;&#xD;&#xA;" caption="Sort a Coded-Value Domain" tip="Sort a Coded-Value Domain" category="Add-In Controls" image="Images\btnDomainSorter.png" onDemand="false" />
+      </Commands>
+      <Toolbars>
+        <Toolbar id="ESRI_DomainSorter_Domian_Sorter_Toolbar" caption="Domain Sorter Toolbar" showInitially="true">
+          <Items>
+            <Button refID="ESRI_DomainSorter_btnDomainSorter" />
+          </Items>
+        </Toolbar>
+      </Toolbars>
+    </ArcCatalog>
+  </AddIn>
+</ESRI.Configuration>

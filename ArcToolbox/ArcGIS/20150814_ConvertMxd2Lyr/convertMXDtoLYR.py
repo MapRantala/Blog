@@ -57,10 +57,7 @@ def makeLyrFromMXD(inMXD, outLyr):
 
     for lyr in arcpy.mapping.ListLayers(df):
         if not (lyr.name == theUUID):
-            if (lyr.isGroupLayer):
-                print "Adding Group: "+lyr.name
-                arcpy.mapping.AddLayerToGroup (df, iGroupLayer, lyr, "Bottom")
-            elif (lyr.longName == lyr.name):
+            if (lyr.longName == lyr.name):
                 arcpy.mapping.AddLayerToGroup (df, iGroupLayer, lyr, "Bottom")
         else:
             iGroupLayer = lyr
